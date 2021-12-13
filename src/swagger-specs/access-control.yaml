@@ -24,17 +24,17 @@ info:
         - All requests with a payload in the request body (such as POST, PUT, and PATCH calls) must include the header `Content-Type` with a value of `application/json`.
 
 tags: 
-  - name: "Access Control Policies"
+  - name: Access Control Policies
 produces:
   - application/json
 paths:
   /acl/reference:
     get:
       tags:
-        - "Access Control Policies"
-      summary: "List all available permission names and resource types"
-      description: ""
-      operationId: "listPolicyNames"
+        - Access Control Policies
+      summary: List permission names and resource types
+      description: This endpoint lists all permission names and resource types within a sandbox.
+      operationId: listPolicyNames
       produces:
         - "application/json"
       parameters:
@@ -54,10 +54,10 @@ paths:
   /acl/effective-policies:
     post:
       tags:
-        - "Access Control Policies"
-      summary: "List all effective policies"
-      description: "This endpoint lists all the effective policies for a user on given resources within a sandbox."
-      operationId: "listEffectiveAclPolicies"
+        - Access Control Policies
+      summary: List effective policies
+      description: This endpoint lists all the effective policies for a user on given resources within a sandbox.
+      operationId: listEffectiveAclPolicies
       produces:
         - "application/json"
       parameters:
@@ -148,8 +148,8 @@ definitions:
             $ref: '#/definitions/manageProfiles'
           manage-sandboxes:
             $ref: '#/definitions/manageSandboxes'
-          manage-shemas:
-            $ref: '#/definitions/manageShemas'
+          manage-schemas:
+            $ref: '#/definitions/manageSchemas'
           reset-sandboxes:
             $ref: '#/definitions/resetSandboxes'
           view-datasets:
@@ -292,7 +292,7 @@ definitions:
           - read
           - write
           - delete
-  manageShemas:
+  manageSchemas:
     type: object
     properties:
       classes:
